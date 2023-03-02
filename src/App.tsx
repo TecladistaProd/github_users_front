@@ -1,23 +1,23 @@
 import { BrowserRouter } from 'react-router-dom';
 import tw from 'tailwind-styled-components';
 
+import AnimatedRoutes from './components/AnimatedRoutes';
+
 const Container = tw.div`
-  container
   min-h-screen
-  w-screen
+  flex-1
   flex
-  items-stretch
-  justify-items-stretch
-  bg-zinc-800
+  bg-zinc-700
   text-white
   text-base
-  overflow-hidden
+  p-8
 `;
 
 function App() {
   return (
     <Container>
       <BrowserRouter>
+        <AnimatedRoutes/>
       </BrowserRouter>
     </Container>
   )

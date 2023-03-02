@@ -6,7 +6,7 @@ export interface IUser {
 }
 
 export interface IUsersRes {
-  users: IUser;
+  users: IUser[];
   nextLink: string;
 }
 

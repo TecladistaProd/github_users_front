@@ -1,8 +1,8 @@
 import { IRepo, IUser, IUsersRes } from "@/interfaces/github";
 
-class Api {
-  private baseURL = "http://127.0.0.1/api";
+const baseURL = "http://127.0.0.1/api";
 
+class Api {
   static async get<T = any>(url: string): Promise<T> {
     const res = await fetch(url, {
       method: "GET",
@@ -12,19 +12,15 @@ class Api {
   }
 
   static async getUsers() {
-    return await this.get<IUsersRes>(`${this.prototype.baseURL}/users`);
+    return await this.get<IUsersRes>(`${baseURL}/users`);
   }
 
   static async getDetails(username: string) {
-    return await this.get<IUser>(
-      `${this.prototype.baseURL}/users/${username}/details`
-    );
+    return await this.get<IUser>(`${baseURL}/users/${username}/details`);
   }
 
   static async getRepos(username: string) {
-    return await this.get<Array<IRepo>>(
-      `${this.prototype.baseURL}/users/${username}/repos`
-    );
+    return await this.get<Array<IRepo>>(`${baseURL}/users/${username}/repos`);
   }
 }
 
