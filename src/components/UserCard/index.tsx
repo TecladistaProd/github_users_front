@@ -1,12 +1,10 @@
+import { IUser } from '@/interfaces/github';
 import React from 'react';
 import { useLinkClickHandler } from 'react-router-dom';
 
 import { Container, Id, Login, Button } from './styles';
 
-interface IProps {
-  id: string | number;
-  login: string;
-}
+interface IProps extends Pick<IUser, 'id' | 'login'> {}
 
 const UserCard: React.FC<IProps> = ({ id, login }) => {
   const handleKnowMore = useLinkClickHandler(`/user/${login}`);
