@@ -9,6 +9,7 @@ export const Container = tw.div`
   shadow
   dark:bg-gray-800
   dark:border-gray-700
+  h-fit
 `;
 
 export const Id = tw.h5`

@@ -28,10 +28,10 @@ const Home: React.FC = () => {
     try {
       const data = await Api.get<IUsersRes>(nextLink);
       setNextLink(data.nextLink || '');
-      setUsers(data.users || []);
+      setUsers(users => [...users, ...(data.users || [])]);
     } catch(err) {}
   }, [nextLink]);
-
+  
   return (
     <Container
       initial={{ opacity: 0 }}
@@ -43,9 +43,9 @@ const Home: React.FC = () => {
       </Title>
       <UsersContent>
         {
-          users.map(i => (
+          users.map((i, k) => (
             <UserCard
-              key={i.id}
+              key={`${k}-${i.id}`}
               {...i}
             />
           ))

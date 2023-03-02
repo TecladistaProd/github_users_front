@@ -20,6 +20,7 @@ export const UsersContent = tw.div`
   flex-wrap
   gap-4
   flex-1
+  content-baseline
 `;
 
 export const ShowMoreBtn = tw.button`
@@ -28,10 +29,8 @@ export const ShowMoreBtn = tw.button`
   from-purple-600
   to-blue-500
   hover:bg-gradient-to-bl
-  focus:ring-4
-  focus:outline-none
-  focus:ring-blue-300
-  dark:focus:ring-blue-800
+  outline-none
+  active:opacity-60
   font-medium
   rounded-lg
   text-sm
