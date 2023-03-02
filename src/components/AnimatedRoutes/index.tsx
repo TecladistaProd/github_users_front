@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Home from '@/screen/Home';
-import Detail from '@/screen/Detail';
+import Details from '@/screen/Details';
 
 import { AnimatePresence } from 'framer-motion';
 
@@ -11,7 +11,7 @@ const AnimatedRoutes = () => {
     <AnimatePresence mode='wait'>
       <Routes location={location} key={location.pathname}>
         <Route element={<Home />} path="/" />
-        <Route element={<Detail />} path="/user/:username" />
+        <Route element={<Details />} path="/user/:username" />
       </Routes>
     </AnimatePresence>
   );

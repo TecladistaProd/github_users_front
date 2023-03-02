@@ -7,7 +7,8 @@ const Container = tw.div`
   min-h-screen
   flex-1
   flex
-  bg-zinc-700
+  dark:bg-gray-900
+  bg-gray-50
   text-white
   text-base
   p-8

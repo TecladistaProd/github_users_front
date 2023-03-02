@@ -2,15 +2,17 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import Api from '@/services/api';
 
-import { IUser } from '@/interfaces/github';
+import { IRepo, IUser } from '@/interfaces/github';
 
 import DetailsCard from '@/components/DetailsCard';
 
 import { Container, Title, DetailsContainer } from './styles';
 import { useParams } from 'react-router-dom';
+import ReposTable from '@/components/ReposTable';
 
-const Detail: React.FC = () => {
+const Details: React.FC = () => {
   const [userDetails, setUserDetails] = useState<IUser | null>(null);
+  const [repos, setRepos] = useState<IRepo[]>([]);
   const {username} = useParams();
 
   const loadData = useCallback(async () => {
@@ -18,6 +20,11 @@ const Detail: React.FC = () => {
       try {
         const data = await Api.getDetails(username)
         setUserDetails(data)
+      } catch(err) {}
+
+      try {
+        const data = await Api.getRepos(username)
+        setRepos(data)
       } catch(err) {}
     }
   }, []);
@@ -45,6 +52,9 @@ const Detail: React.FC = () => {
             <DetailsCard
               {...userDetails}
             />
+            <ReposTable
+              data={repos}
+            />
           </DetailsContainer>
         )
       }
@@ -52,4 +62,4 @@ const Detail: React.FC = () => {
   );
 }
 
-export default Detail;
+export default Details;

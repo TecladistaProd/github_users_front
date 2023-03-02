@@ -10,7 +10,8 @@ export const Container = tw(motion.div)`
 export const Title = tw.h1`
   text-2xl
   bold
-  text-white
+  dark:text-white
+  text-gray-900
   mb-8
 `;
 

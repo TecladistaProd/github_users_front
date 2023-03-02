@@ -10,6 +10,7 @@ export const Container = tw.div`
   dark:bg-gray-800
   dark:border-gray-700
   p-3
+  h-fit
 `;
 
 export const Avatar = tw.img`
