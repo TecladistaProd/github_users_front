@@ -1,6 +1,6 @@
 import { IRepo, IUser, IUsersRes } from "@/interfaces/github";
 
-const baseURL = "http://127.0.0.1/api";
+const baseURL = "https://git-users-back.onrender.com/api";
 
 class Api {
   static async get<T = any>(url: string): Promise<T> {
